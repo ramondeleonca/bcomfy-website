@@ -4,11 +4,13 @@ import App from './App.tsx'
 import "./global.scss"
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import Navbar from './components/Navbar.tsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <Navbar></Navbar>
     <App></App>
   </React.StrictMode>
 )
