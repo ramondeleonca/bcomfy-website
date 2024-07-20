@@ -20,7 +20,7 @@ export default function App() {
 
   // Load all images
   const [images,  setImages] = useState<HTMLImageElement[]>([]);
-  useMemo(() => {preloadImages(Array(30).fill(0).map((_, i) => `/animations/sequence/intro/${(i + 1).toString().padStart(4, "0")}.png`)).then(setImages)}, []);
+  useMemo(() => {preloadImages(Array(30).fill(0).map((_, i) => `/animations/sequence/intro/${(i + 1).toString().padStart(4, "0")}.png`)).then(loaded => {setImages(loaded); introRendererRef.current?.getContext("2d")?.drawImage(loaded[0], 0, 0)})}, []);
 
   useEffect(() => {
     console.log(images);
@@ -32,7 +32,7 @@ export default function App() {
         scrollTrigger: {
           trigger: ".intro",
           scrub: 1,
-          markers: true,
+          markers: false,
           start: "top top",
           end: "bottom center"
         }
@@ -42,7 +42,7 @@ export default function App() {
         scrollTrigger: {
           trigger: ".intro",
           scrub: 1,
-          markers: true,
+          markers: false,
           start: "top top",
           end: "bottom center"
         }
