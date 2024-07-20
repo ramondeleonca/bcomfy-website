@@ -5,6 +5,8 @@ import "./global.scss"
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Navbar from './components/Navbar.tsx'
+import "@fontsource-variable/nunito-sans"
+import "@fontsource-variable/montserrat"
 
 gsap.registerPlugin(ScrollTrigger)
 

@@ -9,7 +9,9 @@ export default {
       fontFamily: {
         heavitas: "Heavitas",
         nexa: "Nexa",
-        rounded: "Simply Rounded"
+        rounded: "Simply Rounded",
+        nunito: "Nunito Sans Variable",
+        montserrat: "Montserrat"
       }
     },
   },
