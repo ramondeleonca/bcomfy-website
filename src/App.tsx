@@ -175,7 +175,7 @@ export default function App() {
       </div>
 
       <div className="w-full flex justify-center items-center flex-col pt-24 pb-96">
-        <h1 className="text-white font-rounded text-4xl text-center cambio">¿Estás listo para tener un cambio en tu vida?</h1>
+        <h1 className="text-white font-rounded text-4xl text-center cambio px-8">¿Estás listo para tener un cambio en tu vida?</h1>
         <a href="https://forms.gle/4xSjiEYa8EB2xFQF8" className="text-white text-center font-nexa font-bold registro px-8 py-4 text-2xl underline">Separa tu B-Comfy</a>
       </div>
     </div>
