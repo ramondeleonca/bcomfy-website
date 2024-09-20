@@ -87,10 +87,10 @@ export default function App() {
         scrollTrigger: {
           trigger: ".eco",
           scrub: 1,
-          markers: false,
-          start: "top top",
+          // markers: true,
+          start: "50% bottom",
           end: "bottom center",
-          pin: true
+          // pin: true
         }
       });
 
@@ -101,19 +101,13 @@ export default function App() {
         scrollTrigger: {
           trigger: ".eco-render",
           scrub: 1,
-          // markers: true,
-          start: "top center",
-          end: "bottom center"
+          markers: false,
+          start: "33% bottom",
+          end: "bottom bottom"
         }
       });
 
-      gsap.fromTo(".eco-text", {scale: 0, y: 0, opacity: 0, scrollTrigger: {
-        trigger: ".eco-render",
-        scrub: 1,
-        markers: true,
-        start: "center center",
-        end: "bottom center"
-      }}, {scale: 1, y: -200, opacity: 1, duration: 2, ease: "back.out"});
+      tl2.fromTo(".eco-text", {scale: 0, y: 0, opacity: 0}, {scale: 1, y: -200, opacity: 1, duration: 2, ease: "back.out"});
 
       for (const [index, image] of reycledImages.entries()) tl2.call(() => {
         const canvasCtx = recycledRendererRef.current?.getContext("2d");
@@ -170,14 +164,19 @@ export default function App() {
         </div>
       </div>
 
-      <div className="w-full pt-96 pb-16 flex justify-center flex-col eco">
+      <div className="w-full py-96 flex justify-center flex-col eco">
         <h1 className="ml-8 text-3xl font-rounded text-white eco-1">¡B-Comfy es eco-friendly!</h1>
         <h1 className="ml-8 text-4xl font-montserrat text-white mt-4 eco-2">¿Por qué?</h1>
       </div>
 
       <div className="w-full h-full flex items-center justify-center eco-render">
-        <canvas ref={recycledRendererRef} className="aspect-square recycled-renderer w-4/5 absolute z-10" width={720} height={720}></canvas>
-        <h1 className="absolute w-3/4 eco-text text-white text-center font-rounded text-3xl z-20">La carcasa esta hecha 100% de filamento reciclado</h1>
+        <canvas ref={recycledRendererRef} className="aspect-square recycled-renderer w-4/5 absolute z-20" width={720} height={720}></canvas>
+        <h1 className="absolute w-3/4 eco-text text-white text-center font-rounded text-3xl z-10">La carcasa esta hecha 100% de filamento reciclado</h1>
+      </div>
+
+      <div className="w-full flex justify-center items-center flex-col pt-24 pb-96">
+        <h1 className="text-white font-rounded text-4xl text-center cambio">¿Estás listo para tener un cambio en tu vida?</h1>
+        <a href="https://forms.gle/4xSjiEYa8EB2xFQF8" className="text-white text-center font-nexa font-bold registro px-8 py-4 text-2xl underline">Separa tu B-Comfy</a>
       </div>
     </div>
   )
